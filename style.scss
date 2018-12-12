@@ -1,0 +1,149 @@
+/*多选样式*/
+.multigrace-btn-group.grace-multi-dropdown {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    position: relative;
+
+    .grace-btn.btn-primary.dropdown-toggle {
+
+        &.dropdown-disabled {
+            cursor: not-allowed;
+
+            span {
+                border-color: #666;
+                color: #666;
+            }
+        }
+
+        span {
+            border: 1px solid rgba(179, 213, 247, 1);
+            border-radius: 50%;
+            color: rgba(179, 213, 247, 1);
+        }
+    }
+
+    .grace-multi-dropdown-body {
+        background: #fff;
+        border: 1px solid rgb(144, 176, 207);
+        border-radius: 2px;
+        display: none;
+        position: absolute;
+        z-index: 10;
+        
+        .ul-wrap {
+            display: flex;
+            max-height: 260px;
+            min-height: 160px;
+
+            > ul:last-child {
+                border-right: none;
+            }
+
+            .dropdown-menu {
+                background: #fff;
+                border-right: 1px solid #d5e0f2;
+                flex: 1;
+                float: left;
+                margin: 0;
+                outline: none;
+                overflow-y: auto;
+                overflow-x: hidden;
+                width: 140px;
+
+                .no-data-content {
+                    text-align: center;
+                }
+    
+                &.single-dropdown {
+                    width: 100%;
+                }
+    
+                >li {
+                    position: relative;
+                    line-height: normal;
+    
+                    i.show-i.option-has-children {
+                        display: inline-block;
+                        border-top: 1px solid;
+                        border-right: 1px solid;
+                        width: 6px;
+                        height: 6px;
+                        transform: rotate(45deg);
+                        top: 15px;
+                        right: 10px;
+                        position: absolute;
+                    }
+    
+                    >.sel-option{
+                        display: block;
+                        color: #666;
+                        padding: 10px 10px 10px 33px;
+                    }
+    
+                    &:hover {
+                        background-color: #f3f6f8;
+                    }
+    
+                    &.disabled-bg.disabled {
+                        .sel-option{
+                            color: rgba(0, 0, 0, .4);
+                            cursor: not-allowed;
+                        }
+                    }
+    
+                    &.selected, &.halfCheckd {
+                        .check-icon {
+                            background: #2576df;
+                        }
+                    }
+        
+                    .check-icon {
+                        border: 1px solid #B3D5F7;
+                        border-radius: 4px;
+                        color: #fff;
+                        height: 14px;
+                        left: 9px;
+                        position: absolute;
+                        top: 12px;
+                        width: 14px;
+        
+                        &.SZ_font {
+                            border: 0;
+                            color: #fff;
+                            font-size: 14px;
+                        }
+                    }
+                }
+    
+                .search-input-wrapper {
+                    position: relative;
+    
+                    .search-input {
+                        border: 1px solid rgb(144, 176, 207);
+                        border-radius: 4px;
+                        font-size: 12px;
+                        height: 30px;
+                        margin: 4%;
+                        padding: 7px;
+                        width: 92%;
+                    }
+    
+                    >i {
+                        color: rgba(140, 140, 140, 1);
+                        font-size: 16px;
+                        position: absolute;
+                        right: 8%;
+                        top: 15%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.grace-dropdown-open {
+    .multigrace-btn-group .grace-multi-dropdown-body {
+        display: block;
+    }
+}
