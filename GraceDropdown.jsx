@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const GraceDropdown = WrappedComponent =>
     class extends Component {
+        static propTypes = {
+            isOpen: PropTypes.bool,
+            notCloseWhenClickOther: PropTypes.bool
+        };
+
+        static defaultProps = {
+            isOpen: false,
+            notCloseWhenClickOther: false
+        };
+
         constructor(props) {
             super(props);
-            this.state = { isShow: false };
+            this.state = { isShow: this.props.isOpen };
             this.isComMounted = true;
             this.clickFn = this.clickFn.bind(this);
             this.closeDropdown = this.closeDropdown.bind(this);
@@ -21,15 +32,13 @@ const GraceDropdown = WrappedComponent =>
             }
         }
         openDropdown() {
-            // 将当前打开的关闭
-            document.querySelectorAll('.grace-dropdown-open .dropdown-toggle').forEach(el => el.click());
-            document.addEventListener('click', this.closeDropdown);
+            if (!this.props.notCloseWhenClickOther) document.addEventListener('click', this.closeDropdown);
             this.setState({
                 isShow: true
             });
         }
         closeDropdown() {
-            document.removeEventListener('click', this.closeDropdown);
+            if (this.props.notCloseWhenClickOther) document.removeEventListener('click', this.closeDropdown);
             if (this.isComMounted) {
                 this.setState({
                     isShow: false

@@ -1,4 +1,18 @@
 /*多选样式*/
+.grace-dropdown-open {
+
+    .multigrace-btn-group.grace-multi-dropdown {
+        
+        .grace-btn.btn-primary.dropdown-toggle {
+
+            span {
+                border: 1px solid #B3D5F7;
+                color: #0073E6;
+                font-size: 24px;
+            }
+        }
+    }
+}
 .multigrace-btn-group.grace-multi-dropdown {
     cursor: pointer;
     display: inline-block;
@@ -17,17 +31,25 @@
         }
 
         span {
-            border: 1px solid rgba(179, 213, 247, 1);
-            border-radius: 50%;
-            color: rgba(179, 213, 247, 1);
+            border: 1px solid #C2C2D1;
+            color: #7F92CB;
+            font-size: 24px;
+            border-radius: 2px;
+        }
+
+        span:hover {
+            border: 1px solid #B3D5F7;
+            color: #0073E6;
+            font-size: 24px;
         }
     }
 
     .grace-multi-dropdown-body {
         background: #fff;
-        border: 1px solid rgb(144, 176, 207);
+        border: 1px solid #B3D5F7;
         border-radius: 2px;
         display: none;
+        margin-top: 5px;
         position: absolute;
         z-index: 10;
         
@@ -49,14 +71,33 @@
                 outline: none;
                 overflow-y: auto;
                 overflow-x: hidden;
-                width: 140px;
+                width: 200px;
 
                 .no-data-content {
+                    color: rgba(0,0,0,.6);
+                    margin-top: 15px;
+                    position: relative;
                     text-align: center;
+
+                    .no-data-left {
+                        border-bottom: 1px solid #B3D5F7;
+                        position: absolute;
+                        width: 46px;
+                        height: 10px;
+                        left: 18px;
+                    }
+
+                    .no-data-right {
+                        border-bottom: 1px solid #B3D5F7;
+                        position: absolute;
+                        width: 46px;
+                        height: 10px;
+                        right: 18px;
+                    }
                 }
-    
+
                 &.single-dropdown {
-                    width: 100%;
+                    width: 200px;
                 }
     
                 >li {
@@ -81,8 +122,8 @@
                         padding: 10px 10px 10px 33px;
                     }
     
-                    &:hover {
-                        background-color: #f3f6f8;
+                    &:hover, &.hover-bg {
+                        background-color: #ECF1F8;
                     }
     
                     &.disabled-bg.disabled {
@@ -100,7 +141,7 @@
         
                     .check-icon {
                         border: 1px solid #B3D5F7;
-                        border-radius: 4px;
+                        border-radius: 2px;
                         color: #fff;
                         height: 14px;
                         left: 9px;
@@ -117,24 +158,45 @@
                 }
     
                 .search-input-wrapper {
+                    cursor: default;
                     position: relative;
     
                     .search-input {
-                        border: 1px solid rgb(144, 176, 207);
-                        border-radius: 4px;
+                        border: 1px solid #B3D5F7;
+                        border-radius: 2px;
                         font-size: 12px;
                         height: 30px;
-                        margin: 4%;
-                        padding: 7px;
+                        margin: 5px 4%;
+                        padding: 7px 7px 7px calc(4% + 17px);
                         width: 92%;
+
+                        &:focus {
+                            border-color: #0073E6;
+                        }
                     }
     
                     >i {
-                        color: rgba(140, 140, 140, 1);
-                        font-size: 16px;
-                        position: absolute;
-                        right: 8%;
-                        top: 15%;
+                        &.sz-search {
+                            color: #999999;
+                            font-size: 16px;
+                            position: absolute;
+                            left: 8%;
+                            top: 12px;
+                        }
+                        
+                        &.sz-close-circle-f {
+                            color: #999999;
+                            cursor: pointer;
+                            display: none;
+                            font-size: 16px;
+                            position: absolute;
+                            right: 8%;
+                            top: 12px;
+
+                            &.show-clear {
+                                display: block;
+                            }
+                        }
                     }
                 }
             }
