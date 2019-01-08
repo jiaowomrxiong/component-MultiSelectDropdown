@@ -57,7 +57,7 @@ class MultiGraceCataDropdown extends Component {
             code: 99999,
             name: '全部'
         },
-        toggleDom: [<span key='default-dom' className='SZ_font sz-plus'></span>]
+        toggleDom: [<span key='default-dom'></span>]
     };
 
     constructor(props) {
@@ -233,15 +233,15 @@ class MultiGraceCataDropdown extends Component {
                 { // 在第一级中加入input搜索框
                     param.level === 0 ? (
                         <div className='search-input-wrapper' >
-                            <i className='SZ_font sz-search' />
+                            <i className='search-input-icon' />
                             <input
                                 onChange={e => this.dealSearchFilter(e)}
                                 placeholder={searchPlaceholder}
                                 value={searchText || ''}
-                                className='search-input SZ_font sz-search'
+                                className='search-input'
                             />
                             <i
-                                className={`SZ_font sz-close-circle-f ${searchText ? 'show-clear' : ''}`}
+                                className={`input-clear-icon ${searchText ? 'show-clear' : ''}`}
                                 onClick={() => this.setState({ searchText: '' })}
                             />
                         </div>
@@ -258,8 +258,8 @@ class MultiGraceCataDropdown extends Component {
                                     'show-i': item.children && item.children.length > 0
                                 }),
                                 checkCls = classNames({
-                                    'SZ_font sz-minus': item.halfCheckd,
-                                    'SZ_font sz-check': item.selected
+                                    'item-half-checked': item.halfCheckd,
+                                    'item-selected': item.selected
                                 });
                         if (param.level === 0 && item.code === 99999) { // 在第一级中渲染加入’全部‘选项
                             return (
@@ -271,7 +271,7 @@ class MultiGraceCataDropdown extends Component {
                                         onMouseLeave={this.mouseLeaveFn}
                                         title={item.name}
                                     >
-                                        <span className={`check-icon ${checkCls}`} />
+                                        <span className={`check-icon ${checkCls}`} ><i /></span>
                                         {item.name}
                                     </span>
                                 </li>
@@ -286,7 +286,7 @@ class MultiGraceCataDropdown extends Component {
                                     onClick={e => { this.changeCate(e, item, param.level); }}
                                     title={item.name}
                                 >
-                                    <span className={`check-icon ${checkCls}`} />
+                                    <span className={`check-icon ${checkCls}`} ><i /></span>
                                     {item.name}
                                     <i className={`${showCls} option-has-children`} />
                                 </span>

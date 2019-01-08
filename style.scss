@@ -4,10 +4,10 @@
     .multigrace-btn-group.grace-multi-dropdown {
         
         .grace-btn.btn-primary.dropdown-toggle {
+            border: 1px solid #B3D5F7;
+            color: #0073E6;
 
             span {
-                border: 1px solid #B3D5F7;
-                color: #0073E6;
                 font-size: 24px;
             }
         }
@@ -20,27 +20,30 @@
     position: relative;
 
     .grace-btn.btn-primary.dropdown-toggle {
-
-        &.dropdown-disabled {
-            cursor: not-allowed;
-
-            span {
-                border-color: #666;
-                color: #666;
-            }
-        }
+        width: 26px;
+        height: 26px;
+        border: 1px solid #C2C2D1;
+        color: #7F92CB;
 
         span {
-            border: 1px solid #C2C2D1;
-            color: #7F92CB;
             font-size: 24px;
-            border-radius: 2px;
+        }
+        
+        &.dropdown-disabled {
+            cursor: not-allowed;
+            border-color: #666;
+            color: #666;
         }
 
-        span:hover {
+            
+
+        &:hover {
             border: 1px solid #B3D5F7;
             color: #0073E6;
-            font-size: 24px;
+
+            span {
+                font-size: 24px;
+            }
         }
     }
 
@@ -149,10 +152,26 @@
                         top: 12px;
                         width: 14px;
         
-                        &.SZ_font {
-                            border: 0;
-                            color: #fff;
-                            font-size: 14px;
+                        &.item-selected >i {
+                            display: inline-block;
+                            border-top: 2px solid;
+                            border-right: 2px solid;
+                            width: 8px;
+                            height: 6px;
+                            transform: rotate(135deg);
+                            top: 2px;
+                            right: 2px;
+                            position: absolute;
+                        }
+
+                        &.item-half-checked >i {
+                            display: inline-block;
+                            border-bottom: 2px solid;
+                            width: 8px;
+                            height: 6px;
+                            top: 1px;
+                            right: 2px;
+                            position: absolute;
                         }
                     }
                 }
@@ -172,30 +191,6 @@
 
                         &:focus {
                             border-color: #0073E6;
-                        }
-                    }
-    
-                    >i {
-                        &.sz-search {
-                            color: #999999;
-                            font-size: 16px;
-                            position: absolute;
-                            left: 8%;
-                            top: 12px;
-                        }
-                        
-                        &.sz-close-circle-f {
-                            color: #999999;
-                            cursor: pointer;
-                            display: none;
-                            font-size: 16px;
-                            position: absolute;
-                            right: 8%;
-                            top: 12px;
-
-                            &.show-clear {
-                                display: block;
-                            }
                         }
                     }
                 }

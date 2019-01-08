@@ -17,7 +17,7 @@
 `searchText`*|`string`|`''`|`默认的要搜索的字符串`
 `selectedArr`*|`array`|`[]`|`二维数组,用于设置默认选中的对象。数组中的每个元素代表一个选中项，只需要设置code字段即可,需要将所有code返回,如果其中某一级code找不到，则该默认选中项失效`
 `selAllOption`*|`object`|`{code: 99999, name: '全部'}`|`表示'全部'选项的对象, code无法自定义，约定为99999`
-`toggleDom`*|`htmlDom`|`[<span className='SZ_font sz-plus'></span>]`|`触发下拉框展示或收起的Dom`
+`toggleDom`*|`htmlDom`|`[<span key='default-dom'></span>>]`|`触发下拉框展示或收起的Dom`
 
 ## channelItem &lt;object>
 
