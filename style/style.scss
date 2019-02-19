@@ -1,0 +1,84 @@
+/*多选样式*/
+.multigrace-btn-group.grace-multi-dropdown {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    position: relative;
+
+    .grace-btn.btn-primary.dropdown-toggle {
+        border: 1px solid #C2C2D1;
+        height: 26px;
+        width: 26px;
+        
+        &.dropdown-disabled {
+            border-color: #666;
+            color: #666;
+            cursor: not-allowed;
+        }
+    }
+
+    .grace-multi-dropdown-body {
+        background: #fff;
+        border: 1px solid #B3D5F7;
+        display: none;
+        margin-top: 5px;
+        position: absolute;
+        z-index: 10;
+        
+        .ul-wrap {
+            display: flex;
+            max-height: 260px;
+            min-height: 160px;
+
+            > ul:last-child {
+                border-right: none;
+            }
+
+            .dropdown-menu {
+                background: #fff;
+                border-right: 1px solid #d5e0f2;
+                flex: 1;
+                float: left;
+                margin: 0;
+                outline: none;
+                overflow-y: auto;
+                overflow-x: hidden;
+
+                .no-data-content {
+                    color: rgba(0,0,0,.6);
+                    margin-top: 15px;
+                    position: relative;
+                    text-align: center;
+                }
+    
+                >li {
+                    line-height: normal;
+                    position: relative;
+    
+                    >.sel-option{
+                        color: #666;
+                        display: block;
+                    }
+    
+                    &.disabled-bg.disabled {
+                        .sel-option{
+                            color: rgba(0, 0, 0, .4);
+                            cursor: not-allowed;
+                        }
+                    }
+                }
+    
+                .search-input-wrapper {
+                    cursor: default;
+                    position: relative;
+                }
+            }
+        }
+    }
+}
+
+.grace-multi-dropdown-open {
+    .multigrace-btn-group .grace-multi-dropdown-body {
+        display: block;
+    }
+}
